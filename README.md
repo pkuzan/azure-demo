@@ -1,11 +1,9 @@
-# Hello Cloud App Service 
-An Azure App Service experiment.
+# Pricer App Service 
 
 This project demonstrates how to deploy a s Spring Boot application to Azure App Service using the 
 azure-webapp-maven-plugin.
 
-HelloCloud uses an H2 database with Spring Data JPA for persistence. This will be replaced with SQL Server.
-Currently there is only a Swagger UI.
+`Pricer` uses Spring Data JPA for persistence. This will be used with SQL Server.
 
 The issue with this solution is vanilla Java applications are not directly supported by App Service.
 App Service only officially supports the deployment of Java applications into containers such as Tomcat or Docker.
