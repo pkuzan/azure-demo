@@ -122,6 +122,8 @@ app.controller('prices', function(priceHolder, $scope, $http, $modal) {
             $scope.orderReverse = false;
         }
     };
+
+    $scope.refreshPrices();
 });
 
 app.controller("deleteDialog", function(priceHolder, $scope, $modalInstance){
