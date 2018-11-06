@@ -4,7 +4,7 @@
     <groupId>hellocloud</groupId>
     <artifactId>azure-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-
+    <packaging>jar</packaging>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -54,15 +54,15 @@
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
         </dependency-->
-        <!--dependency>
+        <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>mssql-jdbc</artifactId>
             <version>6.2.1.jre8</version>
-        </dependency-->
-        <dependency>
+        </dependency>
+        <!--dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-        </dependency>
+        </dependency-->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -182,6 +182,9 @@
                 <artifactId>azure-webapp-maven-plugin</artifactId>
                 <version>1.4.1</version>
                 <configuration>
+                    <authentication>
+                      <serverId>azure-auth</serverId>
+                    </authentication>
                     <deploymentType>jar</deploymentType>
 
                     <!-- configure app to run on port 80, required by App Service -->
@@ -193,12 +196,13 @@
                     </appSettings>
 
                     <!-- Web App information -->
-                    <resourceGroup>HelloCloud</resourceGroup>
-                    <appName>pk-007-pricer</appName>
-                    <region>eastus</region>
+                    <resourceGroup>HelloCloud-ASE</resourceGroup>
+                    <appName>pk-007-ase-pricer</appName>
+                    <region>centralus</region>
 
                     <!-- Java Runtime Stack for Web App on Linux-->
                     <linuxRuntime>jre8</linuxRuntime>
+                    <jarFile>/home/site/wwwroot/app.jar</jarFile>
                 </configuration>
             </plugin>
         </plugins>
