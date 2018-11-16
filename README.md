@@ -1,4 +1,4 @@
-<img src="img/azure.png" width="400" />    
+<img src="img/azure.png" width="100" />    
 
 This project demonstrates how to deploy a Spring Boot application to Azure App Service.
 
