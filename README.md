@@ -34,8 +34,7 @@ executable jar file containing all dependencies.
 * Global Scale and High Availability
   * Scale out and up automatically 
 
-For more information, click 
-[here](https://docs.microsoft.com/en-gb/azure/app-service/app-service-web-overview)
+[For more information, click here](https://docs.microsoft.com/en-gb/azure/app-service/app-service-web-overview)
 
 There are 2 classes of Azure PaaS, App Service and App Service Environments (ASE)
 
@@ -51,13 +50,14 @@ There are 2 classes of Azure PaaS, App Service and App Service Environments (ASE
    
 ![](img/networkase-overflow.png?raw=true)   
 
+[For more information, click here](https://docs.microsoft.com/en-us/azure/app-service/environment/intro)
 ## Modifications 
 ### Code
 As App Service supports Java directly (no container required), a Spring Boot application can be deployed with 
 no code modifications.
 ### Configuration
-The simplest way to deploy a Java application to App Service is to use the `azure-webapp-maven-plugin`. 
-
+The simplest way to deploy a Java application to App Service is to use the `azure-webapp-maven-plugin`.  
+The following plugin needs to be added to `pom.xml`.
 ```xml
 <plugin>
     <groupId>com.microsoft.azure</groupId>
@@ -83,10 +83,21 @@ The simplest way to deploy a Java application to App Service is to use the `azur
     </configuration>
 </plugin>
 ```
+|Parameter | Value |
+| --- | --- |
+| deploymentType | jar or war |
+| resourceGroup | Azure Resource Group to deploy to |
+| appName | name of the application - must be unique |
+| region | Azure region to deploy to |
+| linuxRuntime | Runtime to use |
 
-## Setup
+[For more information, click here](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-webapp-maven-plugin)
 
-The Azure maven plugin needs to authenticate with Azure, a Service Principal is used for this purpose. 
+### Authentication
+
+The Azure maven plugin needs to authenticate with Azure, there are 2 ways to do this, via the CLI or using a Service Principal, 
+for this demonstration, we'll authenticate via the CLI.
+
 ```
 az login
 az account show --query "{subscriptionId:id, tenantId:tenantId}"
