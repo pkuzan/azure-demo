@@ -3,9 +3,8 @@
   <img src="img/spring-boot-logo.png" width="200px"/>
 </p>
 
-# This project demonstrates how to deploy a Spring Boot application to Azure App Service.
+# Deploy a Spring Boot application to Azure App Service.
 
-![](img/spring-boot-logo.png?raw=true)  
 
 The `Pricer` application is a vanilla Spring Boot application that uses embedded Tomcat and builds to an 
 executable jar file containing all dependencies. 
