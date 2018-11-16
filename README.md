@@ -53,7 +53,7 @@ There are 2 classes of Azure PaaS, App Service and App Service Environments (ASE
 [For more information, click here](https://docs.microsoft.com/en-us/azure/app-service/environment/intro)
 ## Modifications 
 ### Code
-As App Service supports Java directly (no container required), a Spring Boot application can be deployed with 
+As App Service supports Java directly (no container required), a Spring Boot executable jar can be deployed with 
 no code modifications.
 ### Configuration
 The simplest way to deploy a Java application to App Service is to use the `azure-webapp-maven-plugin`.  
@@ -110,4 +110,28 @@ The application needs to be built and then deployed. In a Terminal window type t
 mvn package
 mvn azure-webapp:deploy
 ```
+On successful deployment, text similar to blow will be displayed.
+```
+mvn azure-webapp:deploy
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] Building azure-demo 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO]
+[INFO] --- azure-webapp-maven-plugin:1.4.1:deploy (default-cli) @ azure-demo ---
+AI: INFO 16-11-2018 13:37, 1: Configuration file has been successfully found as resource
+AI: INFO 16-11-2018 13:37, 1: Configuration file has been successfully found as resource
+[INFO] Authenticate with Azure CLI 2.0
+[INFO] Updating target Web App...
+[INFO] Successfully updated Web App.
+[INFO] Trying to deploy artifact to pk-007-pricer...
+[INFO] Successfully deployed the artifact to https://pk-007-pricer.azurewebsites.net
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+```
 
+The application will not be immediately available as it will take a couple of minutes to launch the 
+underlying resources and for the application to start.
+ 
