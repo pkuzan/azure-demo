@@ -94,51 +94,17 @@ The following plugin needs to be added to `pom.xml`.
 [For more information, click here](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-webapp-maven-plugin)
 
 ### Authentication
-
 The Azure maven plugin needs to authenticate with Azure, there are 2 ways to do this, via the CLI or using a Service Principal, 
 for this demonstration, we'll authenticate via the CLI.
 
+Instructions to install the Azure CLI can be found [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest).  
+Open a command or terminal and type `az login`, follow the instructions in the response.
 ```
-az login
-az account show --query "{subscriptionId:id, tenantId:tenantId}"
-az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/YOUR_SUBSCRIPTION_ID;"
+To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code DJBBGSEWB to authenticate.
 ```
+You are now authenticated.
 
-It will respond :
-```
-{
-  "appId": "APP_ID",
-  "displayName": "NAME",
-  "name": "http://NAME",
-  "password": "PASSWORD",
-  "tenant": "TENNANT_ID"
-}
-```
+### Deploy
 
 
-In your Maven settings.xml add the following, replacing the placeholders with your values, this 
-will be used to authenticate the plugin.
 
-```
-<servers> 
-   <server>
-     <id>azure-auth</id>
-      <configuration>
-         <client>APP_ID</client>
-         <tenant>TENNANT_ID</tenant>
-         <key>PASSWORD</key>
-         <environment>AZURE</environment>
-      </configuration>
-   </server>
-</servers> 
-```
-The appName and resourceGroup attributes of the azure-webapp-maven-plugin in the POM will need to be edited, 
-appName needs to be something globally unique and resourceGroup should refer to an existing Resource Group otherwise a 
-new one will be created. 
-
-```
-<resourceGroup>HelloCloud</resourceGroup>
-<appName>hello-cloud-pk-007</appName>
-```
-
-Run azure-webapp:deploy to deploy to App Service.
