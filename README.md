@@ -51,11 +51,11 @@ There are 2 classes of Azure PaaS, App Service and App Service Environments (ASE
    
 ![](img/networkase-overflow.png?raw=true)   
 
-### Modifications 
-## Code
+## Modifications 
+### Code
 As App Service supports Java directly (no container required), a Spring Boot application can be deployed with 
 no code modifications.
-## Configuration
+### Configuration
 The simplest way to deploy a Java application to App Service is to use the `azure-webapp-maven-plugin`. 
 
 ```xml
