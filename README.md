@@ -1,4 +1,4 @@
-![](img/azure.png?raw=true)  
+<img src="img/azure.png" width="800" /> ![](img/azure.png)  
 This project demonstrates how to deploy a Spring Boot application to Azure App Service.
 
 ![](img/spring-boot-logo.png?raw=true)  
