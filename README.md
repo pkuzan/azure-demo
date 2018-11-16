@@ -100,11 +100,14 @@ for this demonstration, we'll authenticate via the CLI.
 Instructions to install the Azure CLI can be found [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest).  
 Open a command or terminal and type `az login`, follow the instructions in the response.
 ```
-To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code DJBBGSEWB to authenticate.
+To sign in, use a web browser to open the page https://microsoft.com/devicelogin and enter the code XXXXXXXXX to authenticate.
 ```
 You are now authenticated.
 
 ### Deploy
-
-
+The application needs to be built and then deployed. In a Terminal window type the following commands.
+```
+mvn package
+mvn azure-webapp:deploy
+```
 
