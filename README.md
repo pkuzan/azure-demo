@@ -1,4 +1,4 @@
-<p align="center">
+<p align="center" valign="center">
   <img src="img/azure.png" width="350px"/>
   <img src="img/spring-boot-logo.png" width="200px"/>
 </p>
