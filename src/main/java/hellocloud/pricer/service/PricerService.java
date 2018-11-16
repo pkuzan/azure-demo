@@ -6,19 +6,17 @@ import hellocloud.pricer.model.Price;
 import hellocloud.pricer.model.PriceRequest;
 import hellocloud.pricer.model.transformer.PriceTransformer;
 import hellocloud.pricer.repository.PriceRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 
 @Service
 public class PricerService {
+    @Autowired
     private PriceRepository repository;
 
     private PriceTransformer transformer = new PriceTransformer();
-
-    public PricerService(PriceRepository repository) {
-        this.repository = repository;
-    }
 
     public void createPrice(PriceRequest priceRequest) {
         validatePriceRequest(priceRequest);

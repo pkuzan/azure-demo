@@ -1,14 +1,56 @@
-# Pricer App Service 
+![](img/azure.png?raw=true)  
+This project demonstrates how to deploy a Spring Boot application to Azure App Service.
 
-This project demonstrates how to deploy a s Spring Boot application to Azure App Service using the 
-azure-webapp-maven-plugin.
+![](img/spring-boot-logo.png?raw=true)  
 
-`Pricer` uses Spring Data JPA for persistence. This will be used with SQL Server.
+The `Pricer` application is a vanilla Spring Boot application that uses embedded Tomcat and builds to an 
+executable jar file containing all dependencies. 
 
-The issue with this solution is vanilla Java applications are not directly supported by App Service.
-App Service only officially supports the deployment of Java applications into containers such as Tomcat or Docker.
-A Tomcat container is started by this project, but it is not used. 
-A web.config file specifies the startup behavior. 
+* Spring Data JPA for persistence
+  * H2, MySQL, SQL Server
+* Angular SPA UI
+* RESTful endpoint
+  * Spring Rest
+* Swagger UI
+
+## Azure App Service  
+
+* Multiple Languages and Frameworks (Linux)
+  * Java SE, Tomcat and WildFly
+  * .NET Core
+  * Ruby
+  * Node.js
+  * PHP
+  * Python
+  * Go
+  * Docker
+* Security and Compliance
+  * ISO, SOC, PCI
+  * Authenticate with Active Directory
+* Global Scale and High Availability
+  * Scale out and up automatically 
+
+For more information, click 
+[here](https://docs.microsoft.com/en-gb/azure/app-service/app-service-web-overview)
+
+There are 2 classes of Azure PaaS, App Service and App Service Environments (ASE)
+
+### ASE 
+* Dedicated, isolated environments
+  * Windows
+  * Linux
+  * Docker
+  * Functions
+* Very high scale
+* Isolation and secure network access
+  * VNET support is essential for on-prem, Express Route connectivity
+   
+![](img/networkase-overflow.png?raw=true)   
+
+### Code Modifications 
+As App Service supports Java directly (no container required), a Spring Boot application can be deployed with 
+no code modification.
+  
 
 ## Setup
 
