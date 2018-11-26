@@ -135,3 +135,7 @@ AI: INFO 16-11-2018 13:37, 1: Configuration file has been successfully found as 
 The application will not be immediately available as it will take a couple of minutes to launch the 
 underlying resources and for the application to start.
  
+ 
+## App Insights 
+https://docs.microsoft.com/en-us/java/azure/spring-framework/configure-spring-boot-java-applicationinsights?view=azure-java-stable
+ 

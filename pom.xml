@@ -193,8 +193,8 @@
                     </appSettings>
 
                     <!-- Web App information -->
-                    <resourceGroup>HelloCloud</resourceGroup>
-                    <appName>pk-007-pricer</appName>
+                    <resourceGroup>userp</resourceGroup>
+                    <appName>aj-azure-demo-1</appName>
                     <region>eastus</region>
 
                     <!-- Java Runtime Stack for Web App on Linux-->
