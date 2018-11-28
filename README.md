@@ -134,8 +134,25 @@ AI: INFO 16-11-2018 13:37, 1: Configuration file has been successfully found as 
 
 The application will not be immediately available as it will take a couple of minutes to launch the 
 underlying resources and for the application to start.
+
+## Database Connectivity
+The Pricer application, along with most modern Java applications, uses JPA, Hibernate and Spring Data.
+Database configuration is a simple matter of setting properties.  
+Property placeholders `${}` are resolved in this case by environment variables.
+
+```
+spring.datasource.url=jdbc:mysql://pk-007-mysql.mysql.database.azure.com:3306/pricer?useSSL=true&requireSSL=false&serverTimezone=UTC
+spring.datasource.username=${DB_USER}
+spring.datasource.password=${DB_PASSWORD}
+spring.jpa.hibernate.ddl-auto=${DB_DDL_AUTO}
+spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect 
+```
+
+## Prerequisites
+An Azure Subscription is required.   
+Next create a Resource Group in the Subscription.
+Inside the Resource Group, create a Web App.
+
+[Click here to create a Web app](https://portal.azure.com/#create/hub)
  
- 
-## App Insights 
-https://docs.microsoft.com/en-us/java/azure/spring-framework/configure-spring-boot-java-applicationinsights?view=azure-java-stable
- 
+
